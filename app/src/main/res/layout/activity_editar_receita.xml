@@ -5,22 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CadastrarReceitaActivity">
+    android:layout_margin="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="5dp"
         android:orientation="vertical">
 
-
         <TextView
-            android:id="@+id/titulo"
-            android:layout_width="match_parent"
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="Editar Receita"
-            android:textColor="@android:color/black"
+            android:layout_marginLeft="50dp"
+            android:text="MINI MUNDO"
+            android:textColor="@android:color/holo_blue_dark"
             android:textSize="38dp"
-
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,80 +28,111 @@
 
         <EditText
             android:id="@+id/txtNomeReceitaEditar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:width="300dp"
             android:ems="10"
             android:hint="Digite o nome da Receita"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titulo" />
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <EditText
             android:id="@+id/txtTempoPreparoEditar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:width="300dp"
             android:ems="10"
             android:hint="Digite o tempo de preparo"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtNomeReceitaEditar" />
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
         <EditText
             android:id="@+id/txtRendimentoEditar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:width="300dp"
             android:ems="10"
             android:hint="Digite a quantidade de porções"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtTempoPreparoCadastro" />
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
 
         <EditText
             android:id="@+id/txtIngredientesEditar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:width="300dp"
             android:ems="10"
             android:gravity="start|top"
             android:hint="Digite os ingredientes"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtRendimentoCadastro" />
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
 
         <EditText
             android:id="@+id/txtModoPreparoEditar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="28dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:width="300dp"
             android:ems="10"
             android:gravity="start|top"
             android:hint="Digite o modo de preparo"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.504"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtIngredientesCadastro" />
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
 
         <Button
-            android:id="@+id/btnCadastrarReceitaEditar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="150dp"
-            android:text="Cadastrar"
-            android:textColor="#FFFFFF"
+            android:id="@+id/btnEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:width="300dp"
+            android:background="@android:color/holo_blue_dark"
+            android:text="Editar"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine2" />
+
+        <Button
+            android:id="@+id/btnExcluir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="300dp"
+            android:background="@android:color/holo_blue_dark"
+            android:text="Excluir"
+            android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtModoPreparoCadastro" />
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
 
     </LinearLayout>
-
 
 </ScrollView>

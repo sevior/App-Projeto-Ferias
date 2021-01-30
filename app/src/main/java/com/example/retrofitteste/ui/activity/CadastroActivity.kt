@@ -1,18 +1,18 @@
-package com.example.minimundo
+package com.example.retrofitteste.ui.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import config.RetrofitConfig
-import kotlinx.android.synthetic.*
-import model.UsuarioModel
+import androidx.appcompat.app.AppCompatActivity
+import com.example.retrofitteste.R
+import com.example.retrofitteste.model.UsuarioModel
+import com.example.retrofitteste.retrofit.RetrofitInitializer
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import utils.Endpoints
+
 
 class CadastroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,16 +30,14 @@ class CadastroActivity : AppCompatActivity() {
             if (email.text.toString() == "" || nome.text.toString() == "" || senha.text.toString() == "") {
                 Toast.makeText(baseContext, "Preencha todos os campos!", Toast.LENGTH_SHORT).show()
             } else {
-                val retrofit = RetrofitConfig.getRetrofitInstance("http://10.0.0.101:3000/");
-
-                val endpoint = retrofit.create(Endpoints::class.java);
-                val callback = endpoint.cadastro(
-                    email.text.toString(),
+                RetrofitInitializer().receitaService().cadastro(email.text.toString(),
                     nome.text.toString(),
-                    senha.text.toString()
-                )
-                callback.enqueue(object : Callback<UsuarioModel> {
+                    senha.text.toString())
+                val call = RetrofitInitializer().receitaService().cadastro(email.text.toString(),
+                    nome.text.toString(),
+                    senha.text.toString())
 
+                call.enqueue(object : Callback<UsuarioModel>{
                     override fun onFailure(call: Call<UsuarioModel>, t: Throwable) {
                         Toast.makeText(baseContext, "Dados inválidos!", Toast.LENGTH_SHORT).show()
                     }
@@ -48,9 +46,11 @@ class CadastroActivity : AppCompatActivity() {
                         call: Call<UsuarioModel>,
                         response: Response<UsuarioModel>
                     ) {
-                        val i = Intent(this@CadastroActivity, MainActivity::class.java)
+                        Toast.makeText(baseContext, "Usuário cadastrado com sucesso!", Toast.LENGTH_SHORT).show()
+                        val i = Intent(this@CadastroActivity, LoginActivity::class.java)
                         startActivity(i)
                     }
+
                 })
             }
         }

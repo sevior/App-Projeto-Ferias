@@ -1,4 +1,4 @@
-package com.example.minimundo
+package com.example.retrofitteste
 
 import org.junit.Test
 

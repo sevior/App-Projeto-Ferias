@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "MINIMUNDO"
+rootProject.name = "RetrofitTeste"
